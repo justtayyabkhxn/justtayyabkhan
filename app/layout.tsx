@@ -19,7 +19,7 @@ const roboto = Roboto({
   weight: ["400", "700"],
 });
 export const metadata: Metadata = {
-  title: "Jayakrishna",
+  title: "Tayyab Khan",
   description: "From this you'll know about me😊",
 };
 
