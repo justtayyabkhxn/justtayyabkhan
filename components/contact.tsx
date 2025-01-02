@@ -8,9 +8,9 @@ export const Contact = () => {
       </div>
       <h1 className="text-3xl font-bold sm:text-5xl">Get in Touch</h1>
       <p className="text-center text-muted-foreground max-w-[500px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-        Want to chat? Just shoot Into my{" "}
+        Text me {" "}
         <Link target="_blank" href={"https://api.whatsapp.com/send?phone=918279961679&text=Hey%2C%20Tayyab"} className="text-blue-400">
-          Whatsapp
+          [Here]
         </Link>{" "}
         and I will respond with in no time.
       </p>
