@@ -45,8 +45,8 @@ export const DATA = {
     "Express",
     "MongoDb",
     // "Go",
-    // "Postgress",
-    // "Docker",
+    "Postgress",
+    "Docker",
     // "Kafka",
     "C++",
     "Java",
@@ -54,14 +54,14 @@ export const DATA = {
     "Git",
     "Github",
     // "Redis",
-    // "Prisma",
+    "Prisma",
     "Postman",
     "websockets",
   ],
   Projects: [
     {
       title: "TrackR",
-      dates: "Aug-Oct 2024",
+      dates: "Aug 2024-Current",
       active: true,
       description:
         "**TrackR** is a web-based platform for managing lost and found items, built with React, Node.js, Express, and MongoDB. It allows users to report lost belongings, list found items, and search posts by location. Key features include secure authentication, an admin dashboard for post moderation, and notifications for matches or updates. With its responsive design and community-driven approach, TrackR streamlines reconnecting people with their belongings efficiently.",
