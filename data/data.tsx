@@ -61,7 +61,7 @@ export const DATA = {
   Projects: [
     {
       title: "TrackR",
-      dates: "Aug 2024-Current",
+      dates: "Aug-Oct 2024",
       active: true,
       description:
         "**TrackR** is a web-based platform for managing lost and found items, built with React, Node.js, Express, and MongoDB. It allows users to report lost belongings, list found items, and search posts by location. Key features include secure authentication, an admin dashboard for post moderation, and notifications for matches or updates. With its responsive design and community-driven approach, TrackR streamlines reconnecting people with their belongings efficiently.",
@@ -74,6 +74,52 @@ export const DATA = {
         },
       ],
       image: "/trackit.png",
+      video: "",
+    },
+    
+    {
+      title: "Pomero",
+      href: "https://justtayyabkhxn.github.io/portfolio/",
+      active: true,
+      description:
+        "**Pomero** is a productivity app designed to help you stay focused and manage your time effectively using the Pomodoro technique. With a sleek interface, Pomero allows users to break their work into focused intervals, track progress, and optimize productivity. Key features include customizable timer settings, task management, progress reports, and soothing alerts to signal breaks. Whether you're studying, working, or pursuing personal projects, Pomero makes time management effortless and helps you achieve your goals with greater efficiency.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      links: [
+        {
+          type: "Website",
+          href: "https://justtayyabkhxn.github.io/pomero/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/justtayyabkhxn/pomero/",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: Pomero,
+      video: "",
+    },
+    {
+      title: "Instant QR Code Generator",
+      href: "https://myqr-gen.vercel.app/",
+      dates: "",
+      active: true,
+      description:
+        "**QRGen** simplifies QR code creation with a user-friendly platform that allows instant generation and customization. Users can create QR codes for URLs, text, and other data types with ease. Featuring a secure login/signup system for personalized designs, QRGen also offers free, hassle-free generation without registration. With a sleek UI and seamless performance, it’s the ultimate tool for quick and efficient QR code generation.",
+      technologies: ["Next.js", "TypeScript", "MongoDB","TailwindCSS,JWTs"],
+      links: [
+        {
+          type: "Website",
+          href: "https://myqr-gen.vercel.app/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/justtayyabkhxn/myqr-gen",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: "/qr-gen.png",
       video: "",
     },
     {
@@ -97,28 +143,6 @@ export const DATA = {
         },
       ],
       image: Kuchbhi,
-      video: "",
-    },
-    {
-      title: "Pomero",
-      href: "https://justtayyabkhxn.github.io/portfolio/",
-      active: true,
-      description:
-        "**Pomero** is a productivity app designed to help you stay focused and manage your time effectively using the Pomodoro technique. With a sleek interface, Pomero allows users to break their work into focused intervals, track progress, and optimize productivity. Key features include customizable timer settings, task management, progress reports, and soothing alerts to signal breaks. Whether you're studying, working, or pursuing personal projects, Pomero makes time management effortless and helps you achieve your goals with greater efficiency.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      links: [
-        {
-          type: "Website",
-          href: "https://justtayyabkhxn.github.io/pomero/",
-          icon: <BsGlobe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/justtayyabkhxn/pomero/",
-          icon: <BsGithub className="size-3" />,
-        },
-      ],
-      image: Pomero,
       video: "",
     },
     {
