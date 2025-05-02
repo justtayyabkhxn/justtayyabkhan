@@ -3,6 +3,7 @@ import { BsGithub, BsGlobe, BsLinkedin } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { SiGoogleforms } from "react-icons/si";
 import Pomero from "@/public/pomero.png";
+import Sticko from "@/public/sticko.png";
 import Kuchbhi from "@/public/kuchbhi.png";
 export const DATA = {
   socialButtons: [
@@ -78,8 +79,34 @@ export const DATA = {
     },
     
     {
+      title: "Sticko",
+      href: "https://https://stickonotes.vercel.app/",
+      active: true,
+      description:
+        "**Sticko** is a simple and intuitive web application designed to help users manage their notes and to-dos effectively. With features like easy task management, note-taking, and the ability to save and export your data, Sticko offers a clean interface built using Next.js, TypeScript, and Tailwind CSS. It is fully responsive, ensuring that you can stay organized and productive on any device.",
+      technologies: [ "Frontend: Next.js (React Framework), TypeScript, Tailwind CSS",
+        "Backend: Node.js, Express",
+        "Database: MongoDB",
+        "Authentication: JWT (JSON Web Tokens)",
+        "Deployment: Vercel (for frontend), Custom server (for backend)"],
+      links: [
+        {
+          type: "Website",
+          href: "https://https://stickonotes.vercel.app/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/justtayyabkhxn/sticko/",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: Sticko,
+      video: "",
+    },
+    {
       title: "Pomero",
-      href: "https://justtayyabkhxn.github.io/portfolio/",
+      href: "https://justtayyabkhxn.github.io/pomero/",
       active: true,
       description:
         "**Pomero** is a productivity app designed to help you stay focused and manage your time effectively using the Pomodoro technique. With a sleek interface, Pomero allows users to break their work into focused intervals, track progress, and optimize productivity. Key features include customizable timer settings, task management, progress reports, and soothing alerts to signal breaks. Whether you're studying, working, or pursuing personal projects, Pomero makes time management effortless and helps you achieve your goals with greater efficiency.",
