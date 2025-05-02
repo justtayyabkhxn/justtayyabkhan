@@ -80,7 +80,7 @@ export const DATA = {
     
     {
       title: "Sticko",
-      href: "https://https://stickonotes.vercel.app/",
+      href: "https://stickonotes.vercel.app/",
       active: true,
       description:
         "**Sticko** is a simple and intuitive web application designed to help users manage their notes and to-dos effectively. With features like easy task management, note-taking, and the ability to save and export your data, Sticko offers a clean interface built using Next.js, TypeScript, and Tailwind CSS. It is fully responsive, ensuring that you can stay organized and productive on any device.",
