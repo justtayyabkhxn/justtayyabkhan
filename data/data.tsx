@@ -61,6 +61,29 @@ export const DATA = {
   ],
   Projects: [
     {
+      title: "MyBudgetory",
+      dates: "May 2025",
+      href: "https://mybudgetory.vercel.app/",
+      active: true,
+      description:
+        "**Budgetory** is a personal finance web app designed to help users track their income and expenses. With features like transaction management, insightful statistics, and monthly expense analysis, Budgetory makes budgeting simple and efficient. The app is fully responsive, offering a seamless experience across devices. It’s built using Next.js, Tailwind CSS, Node.js, and MongoDB, ensuring a modern and scalable solution for managing finances.",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
+        links: [
+        {
+          type: "Website",
+          href: "https://mybudgetory.vercel.app/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/justtayyabkhxn/mybudgetory/",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: "/mybudgetory.png",
+      video: "",
+    },
+    {
       title: "TrackR",
       dates: "Aug-Oct 2024",
       active: true,
@@ -84,11 +107,7 @@ export const DATA = {
       active: true,
       description:
         "**Sticko** is a simple and intuitive web application designed to help users manage their notes and to-dos effectively. With features like easy task management, note-taking, and the ability to save and export your data, Sticko offers a clean interface built using Next.js, TypeScript, and Tailwind CSS. It is fully responsive, ensuring that you can stay organized and productive on any device.",
-      technologies: [ "Frontend: Next.js (React Framework), TypeScript, Tailwind CSS",
-        "Backend: Node.js, Express",
-        "Database: MongoDB",
-        "Authentication: JWT (JSON Web Tokens)",
-        "Deployment: Vercel (for frontend), Custom server (for backend)"],
+      technologies: [ "Next.js, TypeScript, Tailwind CSS, Node.js, Express, MongoDB",],
       links: [
         {
           type: "Website",

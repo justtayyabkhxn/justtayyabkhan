@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProfilePic from "@/public/profile.jpeg";
+import ProfilePic from "@/public/profile.png";
 import { HeaderButtons } from "./header-buttons";
 import ShinyButton from "./ui/shiny-button";
 import Link from "next/link";
@@ -30,8 +30,8 @@ export const Header = () => {
           src={ProfilePic}
           width={190}
           height={90}
-          alt="JK"
-          className="rounded-full cursor-pointer hover:scale-100 scale-90 transition-all duration-500 ease-in-out shadow-2xl"
+          alt="Tayyab Khan"
+          className="rounded-full cursor-pointer hover:scale-100 scale-90 transition-all duration-500 ease-in-out shadow-5xl border-red-500"
         />
       </div>
     </div>
