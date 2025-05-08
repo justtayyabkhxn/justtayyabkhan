@@ -33,7 +33,7 @@ export const DATA = {
     //   message: "Upwork",
     // },
     {
-      link: "https://drive.google.com/file/d/1PYOr_whlft1kdsGrrmph-AqIlnSzDwaz/view?usp=sharing",
+      link: "https://drive.google.com/file/d/1jCtc5h2UL3w3fV_uVR5wDHSHnOjSZVcX/view?usp=sharing",
       icon: SiGoogleforms,
       message: "Resume",
     },
