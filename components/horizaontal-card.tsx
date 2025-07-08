@@ -51,7 +51,7 @@ export const HorizontalCard = ({
             <AvatarImage
               src={logoUrl}
               alt={altText}
-              className="object-contain"
+              className="object-contain border-[2px] border-white"
             />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
