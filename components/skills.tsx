@@ -35,7 +35,11 @@ const skillIcons: Record<string, JSX.Element> = {
   "Prisma": <Code className="h-4 w-4 mr-1 text-orange-300" />,
   "Postman": <Send className="h-4 w-4 mr-1 text-orange-300" />,
   "websockets": <Globe className="h-4 w-4 mr-1 text-orange-300" />,
+  "Shopify": <Box className="h-4 w-4 mr-1 text-orange-300" />,
+  "Webflow": <Globe className="h-4 w-4 mr-1 text-orange-300" />,
+  "WordPress": <Server className="h-4 w-4 mr-1 text-orange-300" />,
 };
+
 
 export const Skills = () => {
   return (

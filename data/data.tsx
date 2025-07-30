@@ -1,4 +1,4 @@
-import { FaUpwork, FaXTwitter } from "react-icons/fa6";
+import {  FaXTwitter } from "react-icons/fa6";
 import { BsGithub, BsGlobe, BsLinkedin } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { SiGoogleforms } from "react-icons/si";
@@ -33,7 +33,7 @@ export const DATA = {
     //   message: "Upwork",
     // },
     {
-      link: "https://drive.google.com/file/d/1jCtc5h2UL3w3fV_uVR5wDHSHnOjSZVcX/view?usp=sharing",
+      link: "https://drive.google.com/file/d/10SvaObuzr4WShDQO35h1z0iU40anfHF4/view?usp=drive_link",
       icon: SiGoogleforms,
       message: "Resume",
     },
@@ -58,6 +58,9 @@ export const DATA = {
     "Prisma",
     "Postman",
     "websockets",
+    "Shopify",
+    "Wordpress",
+    "Webflow"
   ],
   Projects: [
     {
