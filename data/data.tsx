@@ -1,4 +1,4 @@
-import {  FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { BsGithub, BsGlobe, BsLinkedin } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { SiGoogleforms } from "react-icons/si";
@@ -60,8 +60,33 @@ export const DATA = {
     "websockets",
     "Shopify",
     "Wordpress",
-    "Webflow"
+    "Webflow",
   ],
+
+  ProfessionalProjects: [{
+    title: "Bharatiyam",
+      dates: "July 2025",
+      href: "https://www.bhrtym.com/",
+      active: true,
+      description:
+        "Developed a sleek and responsive business portfolio website for a client under my organization, aimed at showcasing their brand and services with a clean and modern aesthetic. Built using React.js and Tailwind CSS, the site features smooth animations, optimized layouts for all devices, and a fast, accessible user experience. Collaborated closely with the design and content teams to ensure alignment with the client’s branding goals and SEO best practices.",
+      technologies: ["ReactJS", "Tailwind CSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.bhrtym.com/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: "/bhrtym.png",
+      video: "",
+
+  }],
   Projects: [
     {
       title: "MyBudgetory",
@@ -70,8 +95,8 @@ export const DATA = {
       active: true,
       description:
         "**Budgetory** is a personal finance web app designed to help users track their income and expenses. With features like transaction management, insightful statistics, and monthly expense analysis, Budgetory makes budgeting simple and efficient. The app is fully responsive, offering a seamless experience across devices. It’s built using Next.js, Tailwind CSS, Node.js, and MongoDB, ensuring a modern and scalable solution for managing finances.",
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
-        links: [
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
+      links: [
         {
           type: "Website",
           href: "https://mybudgetory.vercel.app/",
@@ -103,14 +128,16 @@ export const DATA = {
       image: "/trackit.png",
       video: "",
     },
-    
+
     {
       title: "Sticko",
       href: "https://stickonotes.vercel.app/",
       active: true,
       description:
         "**Sticko** is a simple and intuitive web application designed to help users manage their notes and to-dos effectively. With features like easy task management, note-taking, and the ability to save and export your data, Sticko offers a clean interface built using Next.js, TypeScript, and Tailwind CSS. It is fully responsive, ensuring that you can stay organized and productive on any device.",
-      technologies: [ "Next.js, TypeScript, Tailwind CSS, Node.js, Express, MongoDB",],
+      technologies: [
+        "Next.js, TypeScript, Tailwind CSS, Node.js, Express, MongoDB",
+      ],
       links: [
         {
           type: "Website",
@@ -155,7 +182,7 @@ export const DATA = {
       active: true,
       description:
         "**QRGen** simplifies QR code creation with a user-friendly platform that allows instant generation and customization. Users can create QR codes for URLs, text, and other data types with ease. Featuring a secure login/signup system for personalized designs, QRGen also offers free, hassle-free generation without registration. With a sleek UI and seamless performance, it’s the ultimate tool for quick and efficient QR code generation.",
-      technologies: ["Next.js", "TypeScript", "MongoDB","TailwindCSS,JWTs"],
+      technologies: ["Next.js", "TypeScript", "MongoDB", "TailwindCSS,JWTs"],
       links: [
         {
           type: "Website",
@@ -224,11 +251,7 @@ export const DATA = {
       active: true,
       description:
         "**WhatsTheWeather** is a user-friendly app designed to provide accurate and real-time weather updates for any location. With detailed forecasts, current conditions, and location-based insights, it helps users stay prepared for the day ahead. The app features a clean interface, making it easy to check temperature, humidity, wind speed, and more. Whether you're planning your daily commute or an outdoor adventure, **WhatsTheWeather** ensures you're always informed and ready for changing conditions.",
-      technologies: [
-        "HTML",
-       "CSS",
-       "JavaScript", 
-      ],
+      technologies: ["HTML", "CSS", "JavaScript"],
       links: [
         {
           type: "Website",
@@ -266,6 +289,17 @@ export const DATA = {
       ],
       image: "/platepicker.png",
       video: "",
+    },
+  ],
+  experience: [
+    {
+      company: "Volume Creative Agency",
+      href: "https://www.volume.in/",
+      role: "Creative Web Developer",
+      location: "Connaught Place, New Delhi",
+      logoUrl: "/volume.png",
+      start: "July-2025",
+      end: "Present",
     },
   ],
   education: [

@@ -2,6 +2,7 @@
 import { Aboutsection } from "@/components/about-section";
 import { Contact } from "@/components/contact";
 import { Education } from "@/components/education";
+import { Experience } from "@/components/experience";
 import { Header } from "@/components/header";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
@@ -17,6 +18,7 @@ export default function Home() {
         <div className="flex items-center flex-col space-y-12 mx-2">
           <Header />
           <Aboutsection />
+          <Experience/>
           <Skills />
           <Education />
           <Projects />

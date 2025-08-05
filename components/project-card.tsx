@@ -43,7 +43,7 @@ export const ProjectCard = ({
   return (
     <Card
       className={cn(
-        "flex flex-col overflow-hidden h-full transition-all duration-300 ease-out border border-white/20 bg-white/10 dark:bg-white/5 backdrop-blur-md shadow-xl hover:-translate-y-1 hover:shadow-2xl",
+        "flex flex-col overflow-hidden h-full transition-all duration-300 ease-out border border-white/20 bg-white/10 dark:bg-neutral-900 backdrop-blur-md shadow-xl hover:-translate-y-1 hover:shadow-2xl",
         className
       )}
     >
@@ -69,18 +69,23 @@ export const ProjectCard = ({
         )}
       </Link>
 
-      <CardHeader className="px-3 text-white">
+      <CardHeader className="px-3 text-black dark:text-white">
         <div className="space-y-1">
           <CardTitle className="text-base">{title}</CardTitle>
           {dates && (
-            <time className="font-sans text-xs text-white/60">{dates}</time>
+            <time className="font-sans text-xs text-black/60 dark:text-white/60">
+              {dates}
+            </time>
           )}
           {link && (
-            <div className="hidden font-sans text-xs underline print:visible text-white/60">
-              {link.replace("https://", "").replace("www.", "").replace("/", "")}
+            <div className="hidden font-sans text-xs underline print:visible text-black/60 dark:text-white/60">
+              {link
+                .replace("https://", "")
+                .replace("www.", "")
+                .replace("/", "")}
             </div>
           )}
-          <Markdown className="prose max-w-full font-sans text-xs text-white/80 dark:prose-invert prose-p:my-0">
+          <Markdown className="prose prose-p:my-0 max-w-full font-sans text-xs text-black/80 dark:text-white/80 dark:prose-invert">
             {description}
           </Markdown>
         </div>
@@ -92,7 +97,7 @@ export const ProjectCard = ({
             {tags.map((tag) => (
               <Badge
                 key={tag}
-                className="bg-white/10 border border-white/20 text-white text-[10px] px-1.5 py-0 rounded-md"
+                className="bg-white/10 dark:bg-white/10 border border-white/20 text-black dark:text-white text-[10px] px-1.5 py-0 rounded-md"
               >
                 {tag}
               </Badge>
@@ -106,7 +111,7 @@ export const ProjectCard = ({
           <div className="flex flex-wrap items-start gap-2">
             {links.map((link, idx) => (
               <Link href={link.href} key={idx} target="_blank">
-                <Badge className="flex gap-2 bg-white/10 border border-white/20 text-white text-[10px] px-2 py-1 rounded-md">
+                <Badge className="flex gap-2 bg-white/10 dark:bg-white/10 border border-white/20 text-black dark:text-white text-[10px] px-2 py-1 rounded-md">
                   {link.icon}
                   {link.type}
                 </Badge>
