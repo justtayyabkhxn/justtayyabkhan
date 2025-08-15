@@ -89,6 +89,29 @@ export const DATA = {
   }],
   Projects: [
     {
+  title: "FindMyTutorPanel",
+  dates: "August 2025",
+  href: "https://findmytutorpanel.vercel.app/",
+  active: true,
+  description:
+    "**FindMyTutorPanel** is a full-stack tutor management platform designed to simplify tuition allocation and tutor administration. It includes features like tutor registration, experience tracking, tuition assignment, and an intuitive dashboard for managing data efficiently. The system supports real-time updates, secure authentication, and a responsive design for use across devices. Built using Next.js, Tailwind CSS, Node.js, and MongoDB, MyTutorPanel ensures a robust, scalable, and user-friendly experience for both administrators and tutors.",
+  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
+  links: [
+    {
+      type: "Website",
+      href: "https://findmytutorpanel.vercel.app/",
+      icon: <BsGlobe className="size-3" />,
+    },
+    {
+      type: "Source",
+      href: "https://github.com/justtayyabkhxn/findmytutorpanel/",
+      icon: <BsGithub className="size-3" />,
+    },
+  ],
+  image: "/mytutorpanel.png",
+  video: "",
+},
+{
       title: "MyBudgetory",
       dates: "May 2025",
       href: "https://mybudgetory.vercel.app/",
