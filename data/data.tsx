@@ -63,8 +63,9 @@ export const DATA = {
     "Webflow",
   ],
 
-  ProfessionalProjects: [{
-    title: "Bharatiyam",
+  ProfessionalProjects: [
+    {
+      title: "Bharatiyam",
       dates: "July 2025",
       href: "https://www.bhrtym.com/",
       active: true,
@@ -85,33 +86,64 @@ export const DATA = {
       ],
       image: "/bhrtym.png",
       video: "",
+    },
 
-  }],
-  Projects: [
     {
-  title: "FindMyTutorPanel",
-  dates: "August 2025",
-  href: "https://findmytutorpanel.vercel.app/",
+  title: "Symphonies Life",
+  dates: "July 2025",
+  href: "https://www.symphonieslife.com/",
   active: true,
   description:
-    "**FindMyTutorPanel** is a full-stack tutor management platform designed to simplify tuition allocation and tutor administration. It includes features like tutor registration, experience tracking, tuition assignment, and an intuitive dashboard for managing data efficiently. The system supports real-time updates, secure authentication, and a responsive design for use across devices. Built using Next.js, Tailwind CSS, Node.js, and MongoDB, MyTutorPanel ensures a robust, scalable, and user-friendly experience for both administrators and tutors.",
-  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
+    "Built and customized a modern e-commerce website for a client using Shopify and Liquid, designed to highlight their lifestyle and wellness products. The site features a clean storefront, intuitive navigation, and optimized product pages to enhance customer engagement and conversions. Implemented custom Liquid templates, theme modifications, and SEO-friendly structures to ensure a seamless and scalable shopping experience aligned with the client’s brand identity.",
+  technologies: ["Shopify", "Liquid"],
   links: [
     {
       type: "Website",
-      href: "https://findmytutorpanel.vercel.app/",
+      href: "https://www.symphonieslife.com/",
       icon: <BsGlobe className="size-3" />,
     },
     {
       type: "Source",
-      href: "https://github.com/justtayyabkhxn/findmytutorpanel/",
+      href: "",
       icon: <BsGithub className="size-3" />,
     },
   ],
-  image: "/mytutorpanel.png",
+  image: "/symphonies.png",
   video: "",
 },
-{
+
+  ],
+  Projects: [
+    {
+      title: "FindMyTutorPanel",
+      dates: "August 2025",
+      href: "https://findmytutorpanel.vercel.app/",
+      active: true,
+      description:
+        "**FindMyTutorPanel** is a full-stack tutor management platform designed to simplify tuition allocation and tutor administration. It includes features like tutor registration, experience tracking, tuition assignment, and an intuitive dashboard for managing data efficiently. The system supports real-time updates, secure authentication, and a responsive design for use across devices. Built using Next.js, Tailwind CSS, Node.js, and MongoDB, MyTutorPanel ensures a robust, scalable, and user-friendly experience for both administrators and tutors.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://findmytutorpanel.vercel.app/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/justtayyabkhxn/findmytutorpanel/",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: "/mytutorpanel.png",
+      video: "",
+    },
+    {
       title: "MyBudgetory",
       dates: "May 2025",
       href: "https://mybudgetory.vercel.app/",
