@@ -91,7 +91,7 @@ export const DATA = {
     {
   title: "Symphonies Life",
   dates: "July 2025",
-  href: "https://www.symphonieslife.com/",
+  href: "https://symphonieslife.com/",
   active: true,
   description:
     "Built and customized a modern e-commerce website for a client using Shopify and Liquid, designed to highlight their lifestyle and wellness products. The site features a clean storefront, intuitive navigation, and optimized product pages to enhance customer engagement and conversions. Implemented custom Liquid templates, theme modifications, and SEO-friendly structures to ensure a seamless and scalable shopping experience aligned with the client’s brand identity.",
@@ -99,7 +99,7 @@ export const DATA = {
   links: [
     {
       type: "Website",
-      href: "https://www.symphonieslife.com/",
+      href: "https://symphonieslife.com/",
       icon: <BsGlobe className="size-3" />,
     },
     {
