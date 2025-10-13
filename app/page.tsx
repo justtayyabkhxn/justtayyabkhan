@@ -30,7 +30,7 @@ export default function Home() {
         <ModeToggle />
       </div>
 
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-2xl min-h-[100dvh]">
         <div className="flex items-center justify-center flex-col space-y-12 mx-2">
           {[
             <Header key="header" />,
