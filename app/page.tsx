@@ -26,11 +26,11 @@ const sectionVariants = {
 export default function Home() {
   return (
     <div className="absolute inset-0 h-fit w-full">
-      <div className="fixed top-4 right-4">
+      <div className="fixed top-4 right-4 z-[999]">
         <ModeToggle />
       </div>
 
-      <div className="mx-auto max-w-2xl min-h-[100dvh]">
+      <div className="mx-auto max-w-2xl">
         <div className="flex items-center justify-center flex-col space-y-12 mx-2">
           {[
             <Header key="header" />,
