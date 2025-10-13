@@ -26,7 +26,7 @@ const sectionVariants = {
 export default function Home() {
   return (
     <div className="absolute inset-0 h-fit w-full">
-      <div className="fixed top-4 right-4 z-[999]">
+      <div className="absolute top-4 right-4 z-[999]">
         <ModeToggle />
       </div>
 
