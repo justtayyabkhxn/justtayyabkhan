@@ -49,7 +49,7 @@ export const Skills = () => {
         {DATA.skills.map((skill, key) => (
           <Badge
             key={key}
-            className="rounded-md px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm text-gray-800 dark:text-gray-100 flex items-center"
+            className="rounded-md hover:bg-gray-50 px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm text-gray-800 dark:text-gray-100 flex items-center"
           >
             {skillIcons[skill] || <Code className="h-4 w-4 mr-1 text-orange-300" />}
             {skill}

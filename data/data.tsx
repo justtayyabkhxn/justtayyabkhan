@@ -33,7 +33,7 @@ export const DATA = {
     //   message: "Upwork",
     // },
     {
-      link: "https://drive.google.com/file/d/1pjPiXmp8blwf_woGOvKpvDAJ3setR7Me/view?usp=sharing",
+      link: "https://drive.google.com/file/d/13NazEPxb7xMuIE2_yG5yK_8uQ7tu7JT4/view?usp=sharing",
       icon: SiGoogleforms,
       message: "Resume",
     },
@@ -65,6 +65,36 @@ export const DATA = {
 
   ProfessionalProjects: [
     {
+      title: "VOLUME",
+      dates: "Oct-Nov 2025",
+      href: "https://www.volume.in/",
+      active: true,
+      description:
+        "Developed the official website and CMS for VOLUME, featuring immersive animations and modern UI built with Next.js, Framer Motion, and GSAP. Created a custom admin dashboard with drag-and-drop modules to dynamically build Careers, Forms, and Case Studies pages. The system is powered by a secure Node.js + Express backend with MongoDB, enabling flexible content management, real-time updates, and a smooth editorial workflow.",
+      technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.volume.in/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "",
+          href: "",
+          icon: "",
+        },
+      ],
+      image: "",
+      video: "/volume.mp4",
+    },
+    {
       title: "Bharatiyam",
       dates: "July 2025",
       href: "https://www.bhrtym.com/",
@@ -84,34 +114,51 @@ export const DATA = {
           icon: <BsGithub className="size-3" />,
         },
       ],
-      image: "/bhrtym.png",
-      video: "",
+      image: "",
+      video: "/bhrtym.mp4",
     },
 
     {
-  title: "Symphonies Life",
-  dates: "July 2025",
-  href: "https://symphonieslife.com/",
-  active: true,
-  description:
-    "Built and customized a modern e-commerce website for a client using Shopify and Liquid, designed to highlight their lifestyle and wellness products. The site features a clean storefront, intuitive navigation, and optimized product pages to enhance customer engagement and conversions. Implemented custom Liquid templates, theme modifications, and SEO-friendly structures to ensure a seamless and scalable shopping experience aligned with the client’s brand identity.",
-  technologies: ["Shopify", "Liquid"],
-  links: [
-    {
-      type: "Website",
+      title: "Symphonies Life",
+      dates: "July 2025",
       href: "https://symphonieslife.com/",
-      icon: <BsGlobe className="size-3" />,
+      active: true,
+      description:
+        "Built and customized a modern e-commerce website for a client using Shopify and Liquid, designed to highlight their lifestyle and wellness products. The site features a clean storefront, intuitive navigation, and optimized product pages to enhance customer engagement and conversions. Implemented custom Liquid templates, theme modifications, and SEO-friendly structures to ensure a seamless and scalable shopping experience aligned with the client’s brand identity.",
+      technologies: ["Shopify", "Liquid"],
+      links: [
+        {
+          type: "Website",
+          href: "https://symphonieslife.com/",
+          icon: <BsGlobe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "",
+          icon: <BsGithub className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/symphonies.mp4",
     },
     {
-      type: "Source",
-      href: "",
-      icon: <BsGithub className="size-3" />,
+      title: "ATLAS",
+      dates: "June 2025",
+      active: true,
+      href: "https://atlas.com/",
+      description:
+        "Designed and developed a modern, responsive landing page for ATLAS using WordPress. Focused on delivering a clean layout, optimized content structure, and smooth user experience with custom sections tailored to the brand’s identity. Implemented SEO-friendly architecture, performance optimizations, and reusable components to ensure fast loading and easy future updates.",
+      technologies: ["WordPress", "Elementor", "PHP", "CSS", "JavaScript"],
+      links: [
+        {
+          type: "Website",
+          href: "https://atlas.com/",
+          icon: <BsGlobe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/atlas.mp4",
     },
-  ],
-  image: "/symphonies.png",
-  video: "",
-},
-
   ],
   Projects: [
     {

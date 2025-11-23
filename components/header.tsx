@@ -16,7 +16,7 @@ export const Header = () => {
             Full-Stack Developer | Freelancer
           </span>
           <br />
-          Focused on building things which can make an impact!
+          Physics major turned creative web dev. Focused on building things which can make an impact!
         </span>
         <div className="pt-3 flex sm:flex-row flex-col-reverse gap-2  items-center justify-center sm:justify-start">
           <HeaderButtons />
