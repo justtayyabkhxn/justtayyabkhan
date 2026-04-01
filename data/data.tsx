@@ -85,80 +85,67 @@ export const DATA = {
           href: "https://www.volume.in/",
           icon: <BsGlobe className="size-3" />,
         },
-        {
-          type: "",
-          href: "",
-          icon: "",
-        },
       ],
       image: "",
       video: "/volume.mp4",
     },
-    // {
-    //   title: "Bharatiyam",
-    //   dates: "July 2025",
-    //   href: "https://www.bhrtym.com/",
-    //   active: true,
-    //   description:
-    //     "Developed a sleek and responsive business portfolio website for a client under my organization, aimed at showcasing their brand and services with a clean and modern aesthetic. Built using React.js and Tailwind CSS, the site features smooth animations, optimized layouts for all devices, and a fast, accessible user experience. Collaborated closely with the design and content teams to ensure alignment with the client’s branding goals and SEO best practices.",
-    //   technologies: ["ReactJS", "Tailwind CSS"],
-    //   links: [
-    //     {
-    //       type: "Website",
-    //       href: "https://www.bhrtym.com/",
-    //       icon: <BsGlobe className="size-3" />,
-    //     },
-    //     {
-    //       type: "Source",
-    //       href: "",
-    //       icon: <BsGithub className="size-3" />,
-    //     },
-    //   ],
-    //   image: "",
-    //   video: "/bhrtym.mp4",
-    // },
+  ],
 
-    // {
-    //   title: "Symphonies Life",
-    //   dates: "July 2025",
-    //   href: "https://symphonieslife.com/",
-    //   active: true,
-    //   description:
-    //     "Built and customized a modern e-commerce website for a client using Shopify and Liquid, designed to highlight their lifestyle and wellness products. The site features a clean storefront, intuitive navigation, and optimized product pages to enhance customer engagement and conversions. Implemented custom Liquid templates, theme modifications, and SEO-friendly structures to ensure a seamless and scalable shopping experience aligned with the client’s brand identity.",
-    //   technologies: ["Shopify", "Liquid"],
-    //   links: [
-    //     {
-    //       type: "Website",
-    //       href: "https://symphonieslife.com/",
-    //       icon: <BsGlobe className="size-3" />,
-    //     },
-    //     {
-    //       type: "Source",
-    //       href: "",
-    //       icon: <BsGithub className="size-3" />,
-    //     },
-    //   ],
-    //   image: "",
-    //   video: "/symphonies.mp4",
-    // },
-    // {
-    //   title: "ATLAS",
-    //   dates: "June 2025",
-    //   active: true,
-    //   href: "https://atlas.com/",
-    //   description:
-    //     "Designed and developed a modern, responsive landing page for ATLAS using WordPress. Focused on delivering a clean layout, optimized content structure, and smooth user experience with custom sections tailored to the brand’s identity. Implemented SEO-friendly architecture, performance optimizations, and reusable components to ensure fast loading and easy future updates.",
-    //   technologies: ["WordPress", "Elementor", "PHP", "CSS", "JavaScript"],
-    //   links: [
-    //     {
-    //       type: "Website",
-    //       href: "https://atlas.com/",
-    //       icon: <BsGlobe className="size-3" />,
-    //     },
-    //   ],
-    //   image: "",
-    //   video: "/atlas.mp4",
-    // },
+  ClientProjects: [
+    {
+      title: "Bharatiyam",
+      dates: "July 2025",
+      href: "https://www.bhrtym.com/",
+      active: true,
+      description:
+        "Developed a sleek and responsive business portfolio website for a client under my organization, aimed at showcasing their brand and services with a clean and modern aesthetic. Built using React.js and Tailwind CSS, the site features smooth animations, optimized layouts for all devices, and a fast, accessible user experience. Collaborated closely with the design and content teams to ensure alignment with the client’s branding goals and SEO best practices.",
+      technologies: ["ReactJS", "Tailwind CSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.bhrtym.com/",
+          icon: <BsGlobe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/bhrtym.mp4",
+    },
+    {
+      title: "Symphonies Life",
+      dates: "July 2025",
+      href: "https://symphonieslife.com/",
+      active: true,
+      description:
+        "Built and customized a modern e-commerce website for a client using Shopify and Liquid, designed to highlight their lifestyle and wellness products. The site features a clean storefront, intuitive navigation, and optimized product pages to enhance customer engagement and conversions. Implemented custom Liquid templates, theme modifications, and SEO-friendly structures to ensure a seamless and scalable shopping experience aligned with the client’s brand identity.",
+      technologies: ["Shopify", "Liquid"],
+      links: [
+        {
+          type: "Website",
+          href: "https://symphonieslife.com/",
+          icon: <BsGlobe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/symphonies.mp4",
+    },
+    {
+      title: "ATLAS",
+      dates: "June 2025",
+      active: true,
+      href: "https://atlas.com/",
+      description:
+        "Designed and developed a modern, responsive landing page for ATLAS using WordPress. Focused on delivering a clean layout, optimized content structure, and smooth user experience with custom sections tailored to the brand’s identity. Implemented SEO-friendly architecture, performance optimizations, and reusable components to ensure fast loading and easy future updates.",
+      technologies: ["WordPress", "Elementor", "PHP", "CSS", "JavaScript"],
+      links: [
+        {
+          type: "Website",
+          href: "https://atlas.com/",
+          icon: <BsGlobe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/atlas.mp4",
+    },
   ],
   Projects: [
     {

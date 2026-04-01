@@ -7,31 +7,56 @@ import { Experience } from "@/components/experience";
 import { Header } from "@/components/header";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
-import { ModeToggle } from "@/components/theme-button";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { Particles } from "@/components/ui/particles";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useLenis } from "@/components/useLenis";
 
 const sectionVariants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 12 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      delay: i * 0.3, // staggered delay
-      duration: 0.5,
+      delay: i * 0.1,
+      duration: 0.4,
       ease: "easeOut",
     },
   }),
 };
 
 export default function Home() {
+  const [isDark, setIsDark] = useState(false);
+  useLenis();
+
+  useEffect(() => {
+    const update = () => setIsDark(document.documentElement.classList.contains("dark"));
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
+  const particleColor = isDark ? "#ffffff" : "#1a1a1a";
+
   return (
     <div className="absolute inset-0 h-fit w-full">
-      <div className="absolute top-4 right-4 z-[999]">
-        <ModeToggle />
+      <Particles key={particleColor} className="fixed inset-0 -z-10 h-full w-full" quantity={120} color={particleColor} size={0.6} />
+      <div className="fixed top-6  left-4 z-[999] flex gap-4">
+        <Link href="/gallery" className="text-sm tracking-wide  opacity-60 hover:opacity-100 transition-opacity">
+          (gallery)
+        </Link>
+        <Link href="/places" className="text-sm tracking-wide opacity-60 hover:opacity-100 transition-opacity">
+          (places)
+        </Link>
+      </div>
+      <div className="fixed top-4 right-4 z-[999]">
+        <AnimatedThemeToggler className="p-2 rounded-full hover:bg-muted transition-colors" />
       </div>
 
       <div className="mx-auto max-w-2xl">
-        <div className="flex items-center justify-center flex-col space-y-12 mx-2">
+        <div className="flex items-center justify-center flex-col space-y-10 mx-2">
           {[
             <Header key="header" />,
             <Aboutsection key="about" />,

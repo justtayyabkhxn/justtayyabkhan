@@ -1,13 +1,10 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-
 import { useState } from "react";
-import { Card, CardHeader } from "./ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
-import { Badge } from "./ui/badge";
-import { ChevronRightIcon } from "lucide-react";
-import { FaLocationDot } from "react-icons/fa6";
+import { ChevronRight } from "lucide-react";
 
 interface CardProps {
   logoUrl: string;
@@ -20,100 +17,75 @@ interface CardProps {
   description?: string;
   location?: string;
 }
+
 export const HorizontalCard = ({
   logoUrl,
   altText,
   title,
   subtitle,
   href,
-  badges,
   period,
   description,
   location,
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
       e.preventDefault();
       setIsExpanded(!isExpanded);
     }
   };
+
   return (
     <Link
       href={href || "#"}
-      className="block cursor-pointer"
+      className="block group"
       onClick={handleClick}
       target="_blank"
     >
-      <Card className="flex border-none items-center">
-        <div className="flex-none">
-          <Avatar className="border size-12 bg-muted-background dark:bg-foreground">
-            <AvatarImage
-              src={logoUrl}
-              alt={altText}
-              className="object-contain border-[2px] border-white"
-            />
-            <AvatarFallback>{altText[0]}</AvatarFallback>
-          </Avatar>
-        </div>
-        <div className="flex-grow items-center flex-col group">
-          <CardHeader className="px-4">
-            <div className="flex items-center justify-between sm:gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
-                {title}
-                {badges && (
-                  <span className="inline-flex gap-x-1">
-                    {badges.map((badge, index) => (
-                      <Badge
-                        variant="secondary"
-                        className="align-middle text-xs"
-                        key={index}
-                      >
-                        {badge}
-                      </Badge>
-                    ))}
-                  </span>
-                )}
-                <ChevronRightIcon
+      <div className="flex items-start gap-3 py-2 ">
+        <div className="rounded-full aspect-square bg-white ">
+
+        <img
+          src={logoUrl}
+          alt={altText}
+          className="size-9 p-1 rounded-full object-cover  "
+          />
+          </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-sm group-hover:text-foreground transition-colors truncate min-w-0">
+              {title}
+              {description && (
+                <ChevronRight
                   className={cn(
-                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
-                    isExpanded ? "rotate-90" : "rotate-0"
+                    "inline size-3 ml-0.5 opacity-30 transition-transform duration-200",
+                    isExpanded && "rotate-90"
                   )}
                 />
-              </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
-                {period}
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
-              {location && (
-                <div className="font-sans text-xs flex items-center gap-x-1">
-                  <FaLocationDot />
-                  {location}
-                </div>
               )}
+            </span>
+            <span className="text-xs text-muted-foreground shrink-0 tabular-nums ml-auto pl-1">{period}</span>
+          </div>
+          {(subtitle || location) && (
+            <div className="flex items-center justify-between gap-1.5 mt-0.5">
+              {subtitle && <span className="text-xs text-muted-foreground">{subtitle}</span>}
+              {location && <span className="text-xs text-muted-foreground/50 ml-auto">{location}</span>}
             </div>
-          </CardHeader>
+          )}
           {description && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{
-                opacity: isExpanded ? 1 : 0,
-
-                height: isExpanded ? "auto" : 0,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="mt-2 text-xs sm:text-sm"
+              animate={{ opacity: isExpanded ? 1 : 0, height: isExpanded ? "auto" : 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="text-xs text-muted-foreground mt-1.5 leading-relaxed overflow-hidden"
             >
               {description}
             </motion.div>
           )}
         </div>
-      </Card>
+      </div>
     </Link>
   );
 };

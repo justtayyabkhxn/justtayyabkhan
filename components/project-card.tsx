@@ -1,15 +1,7 @@
 import { cn } from "@/lib/utils";
-import Markdown from "react-markdown";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
 import Image, { StaticImageData } from "next/image";
-import { Badge } from "./ui/badge";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -34,20 +26,16 @@ export const ProjectCard = ({
   description,
   dates,
   tags,
-  link,
   image,
   video,
   links,
   className,
 }: ProjectCardProps) => {
+  const plainDesc = description.replace(/\*\*(.*?)\*\*/g, "$1");
+
   return (
-    <Card
-      className={cn(
-        "flex flex-col overflow-hidden h-full transition-all duration-300 ease-out border border-white/20 bg-white/10 dark:bg-neutral-900 backdrop-blur-md shadow-xl hover:-translate-y-1 hover:shadow-2xl",
-        className
-      )}
-    >
-      <Link href={href || "#"} className="block cursor-pointer">
+    <div className={cn("flex flex-col border border-border rounded-lg overflow-hidden", className)}>
+      <Link href={href || "#"} target="_blank" className="block">
         {video && (
           <video
             src={video}
@@ -55,71 +43,63 @@ export const ProjectCard = ({
             loop
             muted
             playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            className="w-full h-36 object-cover object-top"
           />
         )}
-        {image && (
+        {!video && image && (
           <Image
             src={image}
             alt={title}
             width={500}
             height={300}
-            className="h-48 w-full object-cover object-top"
+            className="w-full h-36 object-cover object-top"
           />
         )}
       </Link>
 
-      <CardHeader className="px-3 text-black dark:text-white">
-        <div className="space-y-1">
-          <CardTitle className="text-base">{title}</CardTitle>
+      <div className="p-3 flex flex-col flex-1">
+        <div className="flex items-start justify-between gap-2">
+          <Link href={href || "#"} target="_blank" className="text-sm font-medium hover:underline underline-offset-2">
+            {title}
+          </Link>
           {dates && (
-            <time className="font-sans text-xs text-black/60 dark:text-white/60">
-              {dates}
-            </time>
+            <span className="text-xs text-muted-foreground shrink-0 tabular-nums">{dates}</span>
           )}
-          {link && (
-            <div className="hidden font-sans text-xs underline print:visible text-black/60 dark:text-white/60">
-              {link
-                .replace("https://", "")
-                .replace("www.", "")
-                .replace("/", "")}
-            </div>
-          )}
-          <Markdown className="prose prose-p:my-0 max-w-full font-sans text-xs text-black/80 dark:text-white/80 dark:prose-invert">
-            {description}
-          </Markdown>
         </div>
-      </CardHeader>
 
-      <CardContent className="mt-auto flex flex-col px-3">
+        <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+          {plainDesc}
+        </p>
+
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1 mt-2.5">
             {tags.map((tag) => (
-              <Badge
+              <span
                 key={tag}
-                className="bg-white/10 dark:bg-white/10 border border-white/20 text-black dark:text-white text-[10px] px-1.5 py-0 rounded-md"
+                className="text-[10px] px-1.5 py-0.5 rounded border border-border text-muted-foreground"
               >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         )}
-      </CardContent>
 
-      <CardFooter className="px-3 pb-3">
         {links && links.length > 0 && (
-          <div className="flex flex-wrap items-start gap-2">
+          <div className="flex gap-3 mt-2.5 pt-2.5 border-t border-border">
             {links.map((link, idx) => (
-              <Link href={link.href} key={idx} target="_blank">
-                <Badge className="flex gap-2 bg-white/10 dark:bg-white/10 border border-white/20 text-black dark:text-white text-[10px] px-2 py-1 rounded-md">
-                  {link.icon}
-                  {link.type}
-                </Badge>
+              <Link
+                key={idx}
+                href={link.href}
+                target="_blank"
+                className="flex items-center gap-0.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowUpRight className="size-3" />
+                {link.type}
               </Link>
             ))}
           </div>
         )}
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 };
