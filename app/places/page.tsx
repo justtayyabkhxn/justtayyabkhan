@@ -70,7 +70,7 @@ const PLACES: Place[] = [
   {
     name: "Chopta, Himachal Pradesh",
     visited: true,
-    date: "Jan · 2026",
+    date: "- · -",
     image: "/chopta.jpg",
   },
 
