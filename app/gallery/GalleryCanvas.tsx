@@ -824,6 +824,31 @@ export default function GalleryCanvas({ images }: { images: string[] }) {
         >
           L I F E
         </div>
+
+        <div
+          style={{
+            position: "absolute",
+            bottom: "24px",
+            left: "28px",
+            fontFamily: "inherit",
+            color: "#000",
+            userSelect: "none",
+            textShadow: "0 0 6px #fff, 0 0 10px #fff, 0 0 14px #fff",
+            fontSize: "0.65rem",
+            letterSpacing: "0.04em",
+            lineHeight: "1.8",
+            opacity: 0.75,
+          }}
+        >
+          <div>
+            ↑ ↓ ← → &nbsp;or&nbsp; W A S D &nbsp;
+            <strong>navigate</strong>
+          </div>
+          <div>
+            scroll to &nbsp;
+            <strong>zoom</strong>
+          </div>
+        </div>
       </div>
     </div>
   );

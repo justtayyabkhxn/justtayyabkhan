@@ -43,7 +43,7 @@ const PLACES: Place[] = [
     date: "Oct · 2023",
     image: "/manali.png",
   },
-   {
+  {
     name: "Fatehpur Sikri, Uttar Pradesh",
     visited: true,
     date: "Sept · 2024",
@@ -75,7 +75,7 @@ const PLACES: Place[] = [
   },
 
   // ── want to go ────────────────────────────────────────────────
-  { name: "Shimla, Himachal Pradesh", visited: false, },
+  { name: "Shimla, Himachal Pradesh", visited: false },
   { name: "Kalpa, Himachal Pradesh", visited: false },
   { name: "Chitkul, Himachal Pradesh", visited: false },
   { name: "Spiti Valley, Himachal Pradesh", visited: false },
@@ -87,6 +87,15 @@ const PLACES: Place[] = [
 ];
 
 export default function PlacesPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const visited = PLACES.filter((p) => p.visited);
   const wishlist = PLACES.filter((p) => !p.visited);
 
@@ -108,16 +117,31 @@ export default function PlacesPage() {
   return (
     <>
       {/* cursor-following image */}
-      {hoveredImg && (
+      {hoveredImg && !isMobile && (
         <div
-          className="fixed z-[9999] pointer-events-none rounded-md overflow-hidden shadow-lg"
+          className="fixed z-[9999] pointer-events-none
+               rounded-md overflow-hidden shadow-lg"
           style={{
             top: cursor.y + 20,
             left: flipX ? cursor.x - 440 : cursor.x + 20,
             width: 420,
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={hoveredImg}
+            alt=""
+            className="w-full h-auto block"
+            draggable={false}
+          />
+        </div>
+      )}
+
+      {hoveredImg && isMobile && (
+        <div
+          className="fixed z-[9999] pointer-events-none
+               rounded-md overflow-hidden shadow-lg"
+          style={{ bottom: 24, right: 16, width: 120 }}
+        >
           <img
             src={hoveredImg}
             alt=""
@@ -154,6 +178,8 @@ export default function PlacesPage() {
               className="flex items-baseline justify-between gap-4 text-sm text-muted-foreground/40 line-through cursor-default select-none"
               onMouseEnter={() => place.image && setHoveredImg(place.image)}
               onMouseLeave={() => setHoveredImg(null)}
+              onTouchStart={() => place.image && setHoveredImg(place.image)}
+              onTouchEnd={() => setHoveredImg(null)}
             >
               <span className="flex items-baseline gap-2">
                 <span className="text-xs">·</span>
