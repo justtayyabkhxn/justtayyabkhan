@@ -5,7 +5,7 @@ import { ClientProjectsSection } from "./client-projects";
 export const Projects = () => {
   return (
     <div className="w-full max-w-2xl space-y-8">
-      <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Work</h2>
+      <h2 className="text-xs font-medium text-muted-foreground text-orange-400 tracking-widest">work</h2>
 
       <div className="space-y-3">
         <p className="text-xs text-muted-foreground">Professional</p>

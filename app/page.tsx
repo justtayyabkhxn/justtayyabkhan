@@ -44,7 +44,7 @@ export default function Home() {
     <div className="absolute inset-0 h-fit w-full">
       <Particles key={particleColor} className="fixed inset-0 -z-10 h-full w-full" quantity={120} color={particleColor} size={0.6} />
       <div className="fixed top-6  left-4 z-[999] flex gap-4">
-        <Link href="/gallery" className="text-sm tracking-wide  opacity-60 hover:opacity-100 transition-opacity">
+        <Link href="/gallery" className="text-sm tracking-wide opacity-60 hover:opacity-100 transition-opacity no-underline">
           (gallery)
         </Link>
         <Link href="/places" className="text-sm tracking-wide opacity-60 hover:opacity-100 transition-opacity">

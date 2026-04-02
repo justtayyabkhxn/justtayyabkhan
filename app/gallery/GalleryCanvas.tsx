@@ -66,9 +66,26 @@ type ChunkData = { key: string; cx: number; cy: number; cz: number };
 type CameraGridState = { cx: number; cy: number; cz: number; camZ: number };
 
 // ─── Texture Manager ──────────────────────────────────────────────────────────
+const MAX_TEXTURE_CACHE = 40;
 const textureCache = new Map<string, THREE.Texture>();
 const loadCallbacks = new Map<string, Set<(tex: THREE.Texture) => void>>();
 const loader = new THREE.TextureLoader();
+const globalTextureLoadListeners = new Set<() => void>();
+
+const touchTextureCache = (key: string) => {
+  const v = textureCache.get(key);
+  if (!v) return;
+  textureCache.delete(key);
+  textureCache.set(key, v);
+};
+
+const evictTextureCache = () => {
+  while (textureCache.size > MAX_TEXTURE_CACHE) {
+    const firstKey = textureCache.keys().next().value as string | undefined;
+    if (!firstKey) break;
+    textureCache.delete(firstKey);
+  }
+};
 
 const isTextureLoaded = (tex: THREE.Texture): boolean => {
   const img = tex.image as HTMLImageElement | undefined;
@@ -84,6 +101,7 @@ const getTexture = (
   const key = item.url;
   const existing = textureCache.get(key);
   if (existing) {
+    touchTextureCache(key);
     if (onLoad) {
       if (isTextureLoaded(existing)) onLoad(existing);
       else loadCallbacks.get(key)?.add(onLoad);
@@ -108,11 +126,13 @@ const getTexture = (
         } catch {}
       });
       loadCallbacks.delete(key);
+      globalTextureLoadListeners.forEach((fn) => fn());
     },
     undefined,
     (err) => console.error("Texture load failed:", key, err),
   );
   textureCache.set(key, texture);
+  evictTextureCache();
   return texture;
 };
 
@@ -141,7 +161,7 @@ const generateChunkPlanes = (
 ): PlaneData[] => {
   const planes: PlaneData[] = [];
   const seed = hashString(`${cx},${cy},${cz}`);
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     const s = seed + i * 1000;
     const r = (n: number) => seededRandom(s + n);
     const size = 12 + r(4) * 8;
@@ -688,6 +708,34 @@ export default function GalleryCanvas({ images }: { images: string[] }) {
     height: 0,
   }));
 
+  const [overlayLoaded, setOverlayLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const needed = Math.min(3, images.length);
+
+    // If enough textures are already in cache (e.g. hot reload / revisit), dismiss immediately
+    let alreadyCached = 0;
+    for (const tex of Array.from(textureCache.values())) {
+      if (isTextureLoaded(tex)) alreadyCached++;
+      if (alreadyCached >= needed) break;
+    }
+    if (alreadyCached >= needed || needed === 0) {
+      setOverlayLoaded(true);
+      return;
+    }
+
+    let count = 0;
+    const listener = () => {
+      count++;
+      if (count >= needed) {
+        globalTextureLoadListeners.delete(listener);
+        setOverlayLoaded(true);
+      }
+    };
+    globalTextureLoadListeners.add(listener);
+    return () => { globalTextureLoadListeners.delete(listener); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const dpr = Math.min(
     typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1,
     1.5,
@@ -735,6 +783,70 @@ export default function GalleryCanvas({ images }: { images: string[] }) {
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 9999 }}>
+      {/* Loading overlay */}
+      <style>{`
+        @keyframes letItCookPulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.25; }
+        }
+        @keyframes loadingLine {
+          0% { width: 0%; }
+          60% { width: 75%; }
+          85% { width: 90%; }
+          100% { width: 100%; }
+        }
+        @keyframes loadingLineDone {
+          0% { width: 90%; }
+          100% { width: 100%; }
+        }
+      `}</style>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "#fff",
+          zIndex: 20,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "32px",
+          transition: "opacity 0.6s ease",
+          opacity: overlayLoaded ? 0 : 1,
+          pointerEvents: overlayLoaded ? "none" : "auto",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "0.875rem",
+            letterSpacing: "0.25em",
+            color: "#000",
+            fontFamily: "inherit",
+            animation: "letItCookPulse 1.4s ease-in-out infinite",
+            userSelect: "none",
+          }}
+        >
+          let it cook
+        </div>
+        <div
+          style={{
+            width: "160px",
+            height: "1px",
+            background: "#e5e5e5",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              height: "100%",
+              background: "#000",
+              animation: overlayLoaded
+                ? "loadingLineDone 0.3s ease-out forwards"
+                : "loadingLine 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
+            }}
+          />
+        </div>
+      </div>
       <KeyboardControls map={KEYBOARD_MAP}>
         <div
           style={{
@@ -775,7 +887,8 @@ export default function GalleryCanvas({ images }: { images: string[] }) {
       <style>{`
         @media (max-width: 639px) {
           .gallery-handle { left: 50% !important; transform: translateX(-50%); }
-          .gallery-life { left: 50% !important; right: auto !important; transform: translateX(-50%); }
+          .gallery-life { left: 50% !important; right: auto !important; transform: translateX(-50%); bottom: 60px !important; }
+          .gallery-hints { left: 50% !important; transform: translateX(-50%); text-align: center; }
         }
       `}</style>
       <div
@@ -826,6 +939,7 @@ export default function GalleryCanvas({ images }: { images: string[] }) {
         </div>
 
         <div
+          className="gallery-hints"
           style={{
             position: "absolute",
             bottom: "24px",
@@ -838,10 +952,11 @@ export default function GalleryCanvas({ images }: { images: string[] }) {
             letterSpacing: "0.04em",
             lineHeight: "1.8",
             opacity: 0.75,
+            whiteSpace: "nowrap",
           }}
         >
           <div>
-            ↑ ↓ ← → &nbsp;or&nbsp; W A S D &nbsp;
+            drag &nbsp;or&nbsp; ↑ ↓ ← → &nbsp;or&nbsp; WASD &nbsp;to&nbsp;
             <strong>navigate</strong>
           </div>
           <div>

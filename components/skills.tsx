@@ -3,7 +3,7 @@ import { DATA } from "@/data/data";
 export const Skills = () => {
   return (
     <div className="w-full max-w-2xl space-y-3">
-      <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Skills</h2>
+      <h2 className="text-xs font-medium text-muted-foreground tracking-widest text-orange-400">skills</h2>
       <div className="flex flex-wrap gap-1.5">
         {DATA.skills.map((skill, key) => (
           <span

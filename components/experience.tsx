@@ -4,7 +4,7 @@ import { HorizontalCard } from "./horizaontal-card";
 export const Experience = () => {
   return (
     <div className="flex flex-col gap-y-3 max-w-2xl w-full">
-      <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Experience</h2>
+      <h2 className="text-xs font-medium text-muted-foreground tracking-widest text-orange-400">experience</h2>
       <div className="space-y-1">
       {DATA.experience.map((experience, key) => (
         <HorizontalCard
